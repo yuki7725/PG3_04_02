@@ -17,24 +17,29 @@ public:
 	ClassName(Type1 a,Type2 b) : a(a),b(b) {}
 
 	//minŠÖ”
-	Type min() {
+	Type1 min() {
 		if (a < b) {
 			return static_cast<Type1>(a);
 		}
 		else {
-			return static_cast<Type2>(b);
+			return static_cast<Type1>(b);
 		}
 	}
 };
 
 int main() {
-	ClassName<int,float> num1(10,20.0f);
-	ClassName<float,double> num2(30.0f,40.0);
-	ClassName<double,int> num3(50.0,60);
+	ClassName<int,float> num1(10, 20.0f);
+	ClassName<float,double> num2(30.0f, 40.0);
+	ClassName<double,int> num3(50.0, 60);
 
 	printf("%d\n", (int)num1.min());
-	printf("%f\n", (int)num2.min());
-	printf("%lf\n", (int)num3.min());
+	printf("%f\n", (float)num1.min());
+	printf("%f\n", (float)num2.min());
+	printf("%lf\n", (double)num2.min());
+	printf("%lf\n", (double)num3.min());
+	printf("%d\n", (int)num3.min());
+
+	
 	//cout‚Åo—Í‚É‘‚«Š·‚¦‚é
 	
 	//printf("%d\n", min(num1.a,(int) num2.a));
